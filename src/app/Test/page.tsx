@@ -14,10 +14,10 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
+  Formspan,
   FormMessage,
 } from "@/components/ui/form";
-import { Label } from "@/components/ui/label";
+import { span } from "@/components/ui/span";
 import { CORRECT_RESULTS } from "../../../results";
 import { useState } from "react";
 import { Card, CardTitle, CardDescription } from "@/components/ui/card";
@@ -91,19 +91,19 @@ export default function MyForm() {
                           id="1a"
                           className="bg-blue-400"
                         ></RadioGroupItem>
-                        <Label htmlFor="1a">A. go</Label>
+                        <span htmlFor="1a">A. go</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer >
                         <RadioGroupItem value="B" id="1b"></RadioGroupItem>
-                        <Label htmlFor="1b">B. was going</Label>
+                        <span htmlFor="1b">B. was going</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="1c"></RadioGroupItem>
-                        <Label htmlFor="1c">C. gone</Label>
+                        <span htmlFor="1c">C. gone</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="1d"></RadioGroupItem>
-                        <Label htmlFor="1d">D. am going</Label>
+                        <span htmlFor="1d">D. am going</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -126,19 +126,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="2a"></RadioGroupItem>
-                        <Label htmlFor="2a">A. studies</Label>
+                        <span>A. studies</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="2b"></RadioGroupItem>
-                        <Label htmlFor="2b">B. will study</Label>
+                        <span >B. will study</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="2c"></RadioGroupItem>
-                        <Label htmlFor="2c">C. studied</Label>
+                        <span >C. studied</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="2d"></RadioGroupItem>
-                        <Label htmlFor="2d">D. is studying</Label>
+                        <span >D. is studying</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -161,19 +161,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="3a"></RadioGroupItem>
-                        <Label htmlFor="3a">A. since</Label>
+                        <span >A. since</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="3b"></RadioGroupItem>
-                        <Label htmlFor="3b">B. for</Label>
+                        <span >B. for</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="3c"></RadioGroupItem>
-                        <Label htmlFor="3c">C. from</Label>
+                        <span >C. from</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="3d"></RadioGroupItem>
-                        <Label htmlFor="3d">D. in</Label>
+                        <span >D. in</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -194,19 +194,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="4a"></RadioGroupItem>
-                        <Label htmlFor="4a">A. He don't like coffee.</Label>
+                        <span >A. He don't like coffee.</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="4b"></RadioGroupItem>
-                        <Label htmlFor="4b">B. He doesn't likes coffee.</Label>
+                        <span >B. He doesn't likes coffee.</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="4c"></RadioGroupItem>
-                        <Label htmlFor="4c">C. He doesn't like coffee.</Label>
+                        <span >C. He doesn't like coffee.</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="4d"></RadioGroupItem>
-                        <Label htmlFor="4d">D. He not like coffee.</Label>
+                        <span >D. He not like coffee.</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -227,19 +227,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="5a"></RadioGroupItem>
-                        <Label htmlFor="5a">A. fast</Label>
+                        <span >A. fast</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="5b"></RadioGroupItem>
-                        <Label htmlFor="5b">B. faster</Label>
+                        <span >B. faster</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="5c"></RadioGroupItem>
-                        <Label htmlFor="5c">C. more fast</Label>
+                        <span >C. more fast</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="5d"></RadioGroupItem>
-                        <Label htmlFor="5d">D. the more fast</Label>
+                        <span >D. the more fast</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -262,19 +262,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="6a"></RadioGroupItem>
-                        <Label htmlFor="6a">A. that</Label>
+                        <span >A. that</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="6b"></RadioGroupItem>
-                        <Label htmlFor="6b">B. if</Label>
+                        <span >B. if</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="6c"></RadioGroupItem>
-                        <Label htmlFor="6c">C. what</Label>
+                        <span >C. what</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="6d"></RadioGroupItem>
-                        <Label htmlFor="6d">D. why</Label>
+                        <span >D. why</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -297,19 +297,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="7a"></RadioGroupItem>
-                        <Label htmlFor="7a">A. see</Label>
+                        <span >A. see</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="7b"></RadioGroupItem>
-                        <Label htmlFor="7b">B. to see</Label>
+                        <span >B. to see</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="7c"></RadioGroupItem>
-                        <Label htmlFor="7c">C. seeing</Label>
+                        <span >C. seeing</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="7d"></RadioGroupItem>
-                        <Label htmlFor="7d">D. to seeing</Label>
+                        <span >D. to seeing</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -332,19 +332,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="8a"></RadioGroupItem>
-                        <Label htmlFor="8a">A. so</Label>
+                        <span>A. so</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="8b"></RadioGroupItem>
-                        <Label htmlFor="8b">B. very</Label>
+                        <span >B. very</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="8c"></RadioGroupItem>
-                        <Label htmlFor="8c">C. too</Label>
+                        <span >C. too</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="8d"></RadioGroupItem>
-                        <Label htmlFor="8d">D. such</Label>
+                        <span >D. such</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -367,19 +367,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="9a"></RadioGroupItem>
-                        <Label htmlFor="9a">A. have</Label>
+                        <span >A. have</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="9b"></RadioGroupItem>
-                        <Label htmlFor="9b">B. were having</Label>
+                        <span >B. were having</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="9c"></RadioGroupItem>
-                        <Label htmlFor="9c">C. had</Label>
+                        <span >C. had</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="9d"></RadioGroupItem>
-                        <Label htmlFor="9d">D. have had</Label>
+                        <span >D. have had</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -403,19 +403,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="10a"></RadioGroupItem>
-                        <Label htmlFor="10a">A. advice</Label>
+                        <span >A. advice</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="10b"></RadioGroupItem>
-                        <Label htmlFor="10b">B. advices</Label>
+                        <span>B. advices</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="10c"></RadioGroupItem>
-                        <Label htmlFor="10c">C. advise</Label>
+                        <span >C. advise</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="10d"></RadioGroupItem>
-                        <Label htmlFor="10d">D. advising</Label>
+                        <span >D. advising</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -438,19 +438,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="11a"></RadioGroupItem>
-                        <Label htmlFor="11a">A. good</Label>
+                        <span >A. good</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="11b"></RadioGroupItem>
-                        <Label htmlFor="11b">B. more good</Label>
+                        <span >B. more good</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="11c"></RadioGroupItem>
-                        <Label htmlFor="11c">C. better</Label>
+                        <span >C. better</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="11d"></RadioGroupItem>
-                        <Label htmlFor="11d">D. best</Label>
+                        <span >D. best</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -473,19 +473,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="12a"></RadioGroupItem>
-                        <Label htmlFor="12a">A. is</Label>
+                        <span >A. is</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="12b"></RadioGroupItem>
-                        <Label htmlFor="12b">B. was</Label>
+                        <span >B. was</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="12c"></RadioGroupItem>
-                        <Label htmlFor="12c">C. were</Label>
+                        <span >C. were</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="12d"></RadioGroupItem>
-                        <Label htmlFor="12d">D. be</Label>
+                        <span >D. be</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -508,19 +508,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="13a"></RadioGroupItem>
-                        <Label htmlFor="13a">A. many</Label>
+                        <span>A. many</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="13b"></RadioGroupItem>
-                        <Label htmlFor="13b">B. much</Label>
+                        <span >B. much</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="13c"></RadioGroupItem>
-                        <Label htmlFor="13c">C. more</Label>
+                        <span >C. more</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="13d"></RadioGroupItem>
-                        <Label htmlFor="13d">D. few</Label>
+                        <span >D. few</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -543,19 +543,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="14a"></RadioGroupItem>
-                        <Label htmlFor="14a">A. never</Label>
+                        <span >A. never</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="14b"></RadioGroupItem>
-                        <Label htmlFor="14b">B. always</Label>
+                        <span >B. always</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="14c"></RadioGroupItem>
-                        <Label htmlFor="14c">C. something</Label>
+                        <span >C. something</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="14d"></RadioGroupItem>
-                        <Label htmlFor="14d">D. often</Label>
+                        <span >D. often</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -578,27 +578,27 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="15a"></RadioGroupItem>
-                        <Label htmlFor="15a">
+                        <span >
                           A. The teacher gave we homework.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="15b"></RadioGroupItem>
-                        <Label htmlFor="15b">
+                        <span >
                           B. The teacher gave us homeworks.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="15c"></RadioGroupItem>
-                        <Label htmlFor="15c">
+                        <span >
                           C. The teacher gave us homework.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="15d"></RadioGroupItem>
-                        <Label htmlFor="15d">
+                        <span >
                           D. The teacher gived us homework.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -633,19 +633,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="16a"></RadioGroupItem>
-                        <Label htmlFor="16a">A. In a library</Label>
+                        <span >A. In a library</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="16b"></RadioGroupItem>
-                        <Label htmlFor="16b">B. In a small bookstore</Label>
+                        <span >B. In a small bookstore</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="16c"></RadioGroupItem>
-                        <Label htmlFor="16c">C. In a restaurant</Label>
+                        <span >C. In a restaurant</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="16d"></RadioGroupItem>
-                        <Label htmlFor="16d">D. At a school</Label>
+                        <span >D. At a school</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -666,21 +666,21 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="17a"></RadioGroupItem>
-                        <Label htmlFor="17a">A. Cleaning the store</Label>
+                        <span >A. Cleaning the store</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="17b"></RadioGroupItem>
-                        <Label htmlFor="17b">
+                        <span >
                           B. Helping customers choose books
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="17c"></RadioGroupItem>
-                        <Label htmlFor="17c">C. Traveling</Label>
+                        <span >C. Traveling</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="17d"></RadioGroupItem>
-                        <Label htmlFor="17d">D. Teaching writing</Label>
+                        <span >D. Teaching writing</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -701,19 +701,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="18a"></RadioGroupItem>
-                        <Label htmlFor="18a">A. Open a new store</Label>
+                        <span >A. Open a new store</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="18b"></RadioGroupItem>
-                        <Label htmlFor="18b">B. Publish a book</Label>
+                        <span >B. Publish a book</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="18c"></RadioGroupItem>
-                        <Label htmlFor="18c">C. Move to another city</Label>
+                        <span >C. Move to another city</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="18d"></RadioGroupItem>
-                        <Label htmlFor="18d">D. Become a tourist guide</Label>
+                        <span>D. Become a tourist guide</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -736,23 +736,23 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="19a"></RadioGroupItem>
-                        <Label htmlFor="19a">A. It lowered its prices</Label>
+                        <span >A. It lowered its prices</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="19b"></RadioGroupItem>
-                        <Label htmlFor="19b">B. Maria wrote a book</Label>
+                        <span >B. Maria wrote a book</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="19c"></RadioGroupItem>
-                        <Label htmlFor="19c">
+                        <span >
                           C. More tourists visit the area
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="19d"></RadioGroupItem>
-                        <Label htmlFor="19d">
+                        <span >
                           D. It moved to a bigger building
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -775,19 +775,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="20a"></RadioGroupItem>
-                        <Label htmlFor="20a">A. Reads only</Label>
+                        <span >A. Reads only</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="20b"></RadioGroupItem>
-                        <Label htmlFor="20b">B. Exercises</Label>
+                        <span >B. Exercises</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="20c"></RadioGroupItem>
-                        <Label htmlFor="20c">C. Writes short stories</Label>
+                        <span >C. Writes short stories</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="20d"></RadioGroupItem>
-                        <Label htmlFor="20d">D. Takes care of pets</Label>
+                        <span >D. Takes care of pets</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -814,23 +814,23 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="21a"></RadioGroupItem>
-                        <Label htmlFor="21a">
+                        <span >
                           A. Can you send me the info?
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="21b"></RadioGroupItem>
-                        <Label htmlFor="21b">
+                        <span >
                           B. Please send me the information.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="21c"></RadioGroupItem>
-                        <Label htmlFor="21c">C. Send me the info!</Label>
+                        <span >C. Send me the info!</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="21d"></RadioGroupItem>
-                        <Label htmlFor="21d">D. I want the info now.</Label>
+                        <span >D. I want the info now.</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -854,27 +854,27 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="22a"></RadioGroupItem>
-                        <Label htmlFor="22a">
+                        <span >
                           A. Studying abroad can be a life-changing experience.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="22b"></RadioGroupItem>
-                        <Label htmlFor="22b">
+                        <span >
                           B. I have a friend who studied abroad.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="22c"></RadioGroupItem>
-                        <Label htmlFor="22c">
+                        <span >
                           C. Many students like traveling.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="22d"></RadioGroupItem>
-                        <Label htmlFor="22d">
+                        <span >
                           D. Classes are different in some countries.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -897,27 +897,27 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="23a"></RadioGroupItem>
-                        <Label htmlFor="23a">
+                        <span >
                           A. The weather was cold. I wore a jacket.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="23b"></RadioGroupItem>
-                        <Label htmlFor="23b">
+                        <span >
                           B. The weather was cold, so I wore a jacket.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="23c"></RadioGroupItem>
-                        <Label htmlFor="23c">
+                        <span>
                           C. The weather was cold wearing a jacket.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="23d"></RadioGroupItem>
-                        <Label htmlFor="23d">
+                        <span>
                           D. Jacket I wore because cold was weather.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -941,19 +941,19 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="24a"></RadioGroupItem>
-                        <Label htmlFor="24a">A. regularly</Label>
+                        <span >A. regularly</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="24b"></RadioGroupItem>
-                        <Label htmlFor="24b">B. regular</Label>
+                        <span >B. regular</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="24c"></RadioGroupItem>
-                        <Label htmlFor="24c">C. being regular</Label>
+                        <span >C. being regular</span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="24d"></RadioGroupItem>
-                        <Label htmlFor="24d">D. regularity doing</Label>
+                        <span >D. regularity doing</span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
@@ -977,28 +977,28 @@ export default function MyForm() {
                     >
                       <RadioGroupContainer>
                         <RadioGroupItem value="A" id="25a"></RadioGroupItem>
-                        <Label htmlFor="25a">
+                        <span >
                           A. Healthy eating is extremely boring.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="B" id="25b"></RadioGroupItem>
-                        <Label htmlFor="25b">
+                        <span >
                           B. Therefore, making healthy choices each day can
                           greatly improve your overall well-being.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="C" id="25c"></RadioGroupItem>
-                        <Label htmlFor="25c">
+                        <span >
                           C. I don’t like vegetables very much.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                       <RadioGroupContainer>
                         <RadioGroupItem value="D" id="25d"></RadioGroupItem>
-                        <Label htmlFor="25d">
+                        <span >
                           D. Many people eat unhealthy food.
-                        </Label>
+                        </span>
                       </RadioGroupContainer>
                     </RadioGroup>
                   </FormControl>
