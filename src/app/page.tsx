@@ -42,6 +42,9 @@ const Page = () => {
                 opacity: 1,
                 filter: "blur(0px)",
               },
+
+
+              
               exit: {
                 y: -20,
                 rotateX: -90,
