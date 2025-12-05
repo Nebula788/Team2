@@ -49,7 +49,7 @@ const Page: React.FC = () => {
   console.log(data);
 
   return (
-    <div className="p-20 bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
+    <div className="p-20 bg-accent grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
       {data?.books?.map((book, index) => (
         <div
           className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
