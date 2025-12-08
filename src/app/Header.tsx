@@ -3,6 +3,14 @@ import { Input } from '@/components/ui/input'
 import { Search, ShoppingCart, User } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const Header = () => {
   return (
@@ -16,9 +24,17 @@ const Header = () => {
         </div>
         <div className='flex gap-2 '>
         <Input className='w-40' type='text' placeholder=' Search'></Input>
-        <Link href={"/cart"}><Button variant={'outline'}><ShoppingCart/></Button></Link>
         <Link href={'/sign-in'}
         ><Button variant={'outline'}><User/></Button></Link>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant={'outline'}><ShoppingCart/></Button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetTitle>Your Cart</SheetTitle>
+            <SheetDescription>yfvasyufbaiosb</SheetDescription>
+          </SheetContent>
+        </Sheet>
       </div>
       </div>
       

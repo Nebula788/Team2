@@ -54,9 +54,10 @@ const Page = () => {
             }}
           >
             <span className="text-6xl">Founders</span>
+
             <span className="text-6xl">Developers</span>
             <span className="text-6xl">Designers</span>
-            <span className="text-6xl">Design Engineers</span>
+            <span className="text-6xl font-bold">Gantulga</span>
           </TextLoop>
         </div>
       </div>

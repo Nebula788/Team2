@@ -5,8 +5,10 @@ import {  Tooltip,
   TooltipTrigger,} from "@/components/ui/tooltip"
 import React, { useEffect, useState } from "react";
 import { Star } from "lucide-react";
-
-interface Book {
+import { Card } from "@/components/ui/card";
+import { useAtom} from "jotai"
+import { cartAtom } from "@/atoms/cartAtom";
+export interface Book {
   goodread_id: string;
   author: string;
   title: string;
@@ -23,7 +25,7 @@ interface ApiResponse {
 
 const Page: React.FC = () => {
   const [data, setData] = useState<ApiResponse | null>(null);
-
+  const [cart, setCart] = useAtom(cartAtom);
   useEffect(() => {
     const fetchBooks = async () => {
       const url =
@@ -43,18 +45,18 @@ const Page: React.FC = () => {
       const result: ApiResponse = await response.json();
       setData(result);
     };
-
     fetchBooks();
   }, []);
-  console.log(data);
+  console.log(cart);
 
   return (
     <div className="p-20 bg-accent grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
       {data?.books?.map((book, index) => (
-        <div
+        <Card className="w-fit py-0 ">
+          <div
           className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
           key={index}>
-          <img className="h-[350px] w-[300px]" src={book.img}></img>
+          <img className="h-[350px] w-[300px] rounded-xl" src={book.img}></img>
           <Tooltip>
             <TooltipTrigger >
               <p className="font-semibold text-2xl line-clamp-2 h-[2lh]">
@@ -69,8 +71,9 @@ const Page: React.FC = () => {
             <p className="bg-chart-4 w-fit text-sm gap-1 flex items-center rounded-xl px-3 absolute top-6 right-6"><Star fill="" className="size-3"/> {book.rating}</p>
           </div>
           
-          <Button>Add to Cart</Button>
+          <Button onClick={() => {setCart([...cart, book])}}>Add to Cart</Button>
         </div>
+        </Card>
       ))}
     </div>
   );
