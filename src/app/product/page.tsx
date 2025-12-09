@@ -4,6 +4,7 @@ import {  Tooltip,
   TooltipContent,
   TooltipTrigger,} from "@/components/ui/tooltip"
 import React, { useEffect, useState } from "react";
+import { BOOKS } from "@/lib/booksData";
 import { Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useAtom} from "jotai"
@@ -23,13 +24,14 @@ interface ApiResponse {
   books: Book[];
 }
 
+
 const Page: React.FC = () => {
   const [data, setData] = useState<ApiResponse | null>(null);
   const [cart, setCart] = useAtom(cartAtom);
   useEffect(() => {
     const fetchBooks = async () => {
       const url =
-        "https://100k-goodreads-books-collection-api.p.rapidapi.com/rapidapi/goodread/goodread_pagination.php?page_no=30";
+        "https://100k-goodreads-books-collection-api.p.rapidapi.com/rapidapi/goodread/goodread_pagination.php?page_no=1";
 
       const options = {
         method: "GET",
@@ -47,12 +49,11 @@ const Page: React.FC = () => {
     };
     fetchBooks();
   }, []);
-  console.log(cart);
 
   return (
-    <div className="p-20 bg-accent grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
+    <div className="p-20 bg-background grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
       {data?.books?.map((book, index) => (
-        <Card className="w-fit py-0 ">
+        <Card className="w-fit py-0  ">
           <div
           className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
           key={index}>
