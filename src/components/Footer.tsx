@@ -1,62 +1,43 @@
 export const Footer = () => {
   return (
-    <footer className="bg-neutral-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-2 md:grid-cols-4">
-        <div>
-          <h2 className="text-white font-semibold mb-4"></h2>
-          <h1 className=" text-white font-bold text-2xl leading-relaxed">
-              We're we are📍
-          </h1>
-          <a className="text-yellow-400 inline-block text-1xl">
-          haana bgon bnoo
-          </a>
+    <footer className="bg-[#8b5e3c] text-white border-t border-white/30 mt-20">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold">Where we are </h3>
+          <p className="text-sm text-white/80 leading-relaxed">
+            Located in the heart of downtown, just two blocks from the train station.
+          </p>
         </div>
-        <div>
-          <h3 className="text-white text-2xl font-semibold mb-4">Our team🫶</h3>
-          <ul className="space-y-2 text-lg font-bold">
-            <li>
-              <a className="text-white">
-               Nandin, Tsuki🎀
-              </a>
-            </li>
-            <li>
-              <a className="text-white">
-                Altai👓
-              </a>
-            </li>
-            <li>
-              <a className=" text-white">
-                Gantulga🧢
-              </a>
-            </li>
+
+       
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold">Our team </h3>
+          <ul className="space-y-1 text-sm text-white/80">
+            <li>Nandin </li>
+            <li>Altai </li>
+            <li>Gantulga </li>
           </ul>
         </div>
-        <div>
-          <h3 className="text-white font-semibold  text-xl mb-4">You can contact us by</h3>
-          <div className="flex flex-wrap gap-2">
-            {["facebook", "instagram", "twitter", "telegram", "email"].map(tag => (
-              <span
-                key={tag}
-                className="border border-gray-600 px-3 py-1 text-xs rounded hover:bg-yellow-400 hover:text-black transition"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div>
-  
-          <div className="flex gap-4 mt-6">
 
-          </div>
+   
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold">Contact us </h3>
+          <p className="text-sm text-white/80">Facebook: Example.page</p>
+          <p className="text-sm text-white/80">Email: Example@gmail.com</p>
+          <p className="text-sm text-white/80">Instagram: Example_e</p>
+
+       
+          <p className="text-lg font-semibold text-white mt-3">
+            Call us: <span className="text-white">0000000</span> 
+          </p>
         </div>
+
       </div>
-      <div className="border-t border-neutral-800">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 gap-3">
-          <p> 🎀 2025 | Made with ❤️</p>
-          <div className="flex gap-4">
-          </div>
-        </div>
+
+     
+      <div className="border-t border-white/20 text-center py-4 text-sm text-white/70">
+        © 2024 Your Company, Inc. All rights reserved.
       </div>
     </footer>
   );
