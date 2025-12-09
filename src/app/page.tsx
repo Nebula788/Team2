@@ -4,6 +4,7 @@ import { Card, CardTitle } from "@/components/ui/card";
 import { ProductsList } from "@/components/ProductsList";
 import { getLevel } from "@/lib/getLevel";
 import Link from "next/link";
+import { TextLoop } from "@/components/ui/text-loop";
 const page = () => {
   const score = window.localStorage.getItem("score");
   return (
@@ -29,6 +30,42 @@ const page = () => {
         </Card>
       )}
       <ProductsList />
+      <TextLoop
+        className="overflow-y-clip"
+        transition={{
+          type: "spring",
+          stiffness: 9000,
+          damping: 80,
+          mass: 10,
+        }}
+        variants={{
+          initial: {
+            y: 20,
+            rotateX: 90,
+            opacity: 0,
+            filter: "blur(4px)",
+          },
+          animate: {
+            y: 0,
+            rotateX: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+          },
+
+          exit: {
+            y: -20,
+            rotateX: -90,
+            opacity: 0,
+            filter: "blur(4px)",
+          },
+        }}
+      >
+        <span className="text-6xl">Founders</span>
+
+        <span className="text-6xl">Developers</span>
+        <span className="text-6xl">Designers</span>
+        <span className="text-6xl font-bold">Gantulga</span>
+      </TextLoop>
     </div>
   );
 };
