@@ -19,13 +19,13 @@ import { useAtom } from "jotai";
 const Header = () => {
   const [cart, setCart] = useAtom(cartAtom);
   return (
-    <div className="bg-accent">
-      <div className="flex items-center justify-between px-10 border-b">
-        <div className="flex items-center gap-2 ">
-          <Link href={"/"} className="flex items-center gap-2 ">
-            <img src="nmtec-erxes-18-04.svg" className="h-12"></img>
-            <p className="text-l font-semibold">Academy</p>
-          </Link>
+    <div className='bg-accent'>
+      <div className='flex items-center justify-between px-10 border-b-1'>
+        <div className='flex items-center gap-2 '>
+            <Link href={'/'}  className='flex items-center gap-2 '>
+            <img src='nmtec-erxes-18-04.svg' className='h-[48px]'></img>
+            <p className='text-l font-semibold'>Academy</p>
+            </Link>
         </div>
         <div className="flex gap-2 ">
           <Input className="w-40" type="text" placeholder=" Search"></Input>

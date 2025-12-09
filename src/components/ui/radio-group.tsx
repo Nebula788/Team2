@@ -44,7 +44,7 @@ function RadioGroupItem({
 
 const RadioGroupContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <label className="flex gap-2 border border-primary p-2 rounded ">
+    <label className="flex gap-2 border border-primary p-2 rounded items-center">
       {children}
     </label>
   );
