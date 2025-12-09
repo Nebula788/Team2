@@ -9,6 +9,7 @@ import { Star } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useAtom} from "jotai"
 import { cartAtom } from "@/atoms/cartAtom";
+
 export interface Book {
   goodread_id: string;
   author: string;
@@ -31,7 +32,7 @@ const Page: React.FC = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       const url =
-        "https://100k-goodreads-books-collection-api.p.rapidapi.com/rapidapi/goodread/goodread_pagination.php?page_no=1";
+        "https://100k-goodreads-books-collection-api.p.rapidapi.com/rapidapi/goodread/goodread_pagination.php?page_no=10";
 
       const options = {
         method: "GET",
@@ -63,6 +64,7 @@ const Page: React.FC = () => {
               <p className="font-semibold text-2xl line-clamp-2 h-[2lh]">
                 {book.title}
               </p>
+              <p></p>
             </TooltipTrigger>
             <TooltipContent>{book.title}</TooltipContent>
           </Tooltip>
@@ -72,7 +74,7 @@ const Page: React.FC = () => {
             <p className="bg-chart-4 w-fit text-sm gap-1 flex items-center rounded-xl px-3 absolute top-6 right-6"><Star fill="" className="size-3"/> {book.rating}</p>
           </div>
           
-          <Button onClick={() => {setCart([...cart, book])}}>Add to Cart</Button>
+          <Button onClick={() => {setCart([...cart, book])}} className="cursor-pointer">Add to Cart</Button>
         </div>
         </Card>
       ))}
