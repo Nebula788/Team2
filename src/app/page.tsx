@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -95,4 +94,4 @@ const page = () => {
   );
 };
 
-export default Page;
+export default page;
