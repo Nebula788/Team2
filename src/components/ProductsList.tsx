@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -11,7 +12,7 @@ import { BOOKS } from "@/lib/booksData";
 import { useAtom } from "jotai";
 import { cartAtom } from "@/atoms/cartAtom";
 
-interface Book {
+export interface Book {
   goodread_id: string;
   author: string;
   title: string;

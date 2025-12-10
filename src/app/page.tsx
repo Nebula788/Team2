@@ -1,6 +1,13 @@
+
 "use client";
+
 import { Button } from "@/components/ui/button";
-import { Card, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { ProductsList } from "@/components/ProductsList";
 import { getLevel } from "@/lib/getLevel";
 import Link from "next/link";
@@ -16,66 +23,76 @@ const page = () => {
   });
 
   return (
-    <div className="flex flex-col gap-5">
-      {score ? (
-        <Card className="flex flex-row justify-around max-w-full w-[90%] mx-auto mt-5">
-          <CardTitle>
-            {score} {getLevel(parseInt(score))}
-          </CardTitle>
-          <Link href={"/test"}>
-            <Button>Try again!</Button>
-          </Link>
-        </Card>
-      ) : (
-        <Card
-          className="max-w-full w-[90%] mx-auto flex flex-row justify-around  mt-5
+    <div className="flex flex-col gap-14 mt-28 px-6">
+      <Card
+        className="
+          relative mx-auto w-[90%] max-w-4xl p-0 overflow-hidden 
+          rounded-xl shadow-lg border border-primary/30
+          bg-background
         "
-        >
-          <CardTitle>try our english assessment exam</CardTitle>
-          <Link href={"/test"}>
-            <Button>Make Test</Button>
-          </Link>
-        </Card>
-      )}
-      <ProductsList />
-      <TextLoop
-        className="overflow-y-clip"
-        transition={{
-          type: "spring",
-          stiffness: 9000,
-          damping: 80,
-          mass: 10,
-        }}
-        variants={{
-          initial: {
-            y: 20,
-            rotateX: 90,
-            opacity: 0,
-            filter: "blur(4px)",
-          },
-          animate: {
-            y: 0,
-            rotateX: 0,
-            opacity: 1,
-            filter: "blur(0px)",
-          },
-
-          exit: {
-            y: -20,
-            rotateX: -90,
-            opacity: 0,
-            filter: "blur(4px)",
-          },
-        }}
       >
-        <span className="text-6xl">Founders</span>
+        <div
+          className="
+            h-2 w-full bg-gradient-to-r 
+            from-primary to-secondary
+          "
+        />
 
-        <span className="text-6xl">Developers</span>
-        <span className="text-6xl">Designers</span>
-        <span className="text-6xl font-bold">Gantulga</span>
-      </TextLoop>
+        <CardHeader
+          className="
+            flex flex-row items-center justify-between px-8 py-6
+          "
+        >
+          <div className="space-y-2">
+            {score ? (
+              <>
+                <CardTitle className="text-4xl font-bold text-foreground tracking-tight">
+                  Your Score:{" "}
+                  <span className="text-secondary-foreground">{score}</span>
+                  /25
+                </CardTitle>
+
+                <CardDescription className="text-xl text-foreground/80">
+                  English Level:{" "}
+                  <span className="font-semibold text-secondary">
+                    {getLevel(score)}
+                  </span>
+                </CardDescription>
+              </>
+            ) : (
+              <>
+                <CardTitle className="text-3xl font-bold text-foreground tracking-tight">
+                  English Proficiency Test
+                </CardTitle>
+
+                <CardDescription className="text-lg text-foreground/80">
+                  Measure your reading and comprehension level in 5 minutes.
+                </CardDescription>
+              </>
+            )}
+          </div>
+
+          {/* CTA Button */}
+          <Link href="/test">
+            <Button
+              size="lg"
+              className="
+                bg-primary text-primary-foreground
+                hover:bg-secondary hover:text-secondary-foreground
+                px-8 py-6 text-lg font-semibold 
+                rounded-lg shadow-md transition
+              "
+            >
+              {score ? "Retake Test" : "Start Test"}
+            </Button>
+          </Link>
+        </CardHeader>
+      </Card>
+
+      {/* Products Section */}
+      <ProductsList />
     </div>
   );
 };
 
-export default page;
+export default Page;

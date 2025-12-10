@@ -45,29 +45,30 @@
 
 :root {
   --radius: 0.625rem;
-  --background:oklch(0.9392 0.0191 157.86); 
-  --foreground: oklch(0.7712 0.0115 167.7);
-  --card: oklch(92.895% 0.05684 83.474);
+  --background: oklch(0.9641 0.002 50.5765);
+  --foreground: oklch(0.7685 0.0063 170.39);
+  --card: oklch(0.95 0.01 50.5);
   --card-foreground: oklch(45.985% 0.04605 52.464);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.186 0.0553 297.2);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.8535 0.1248 89.62);
-  --secondary-foreground: oklch(0.7644 0.1399 87.52);
-  --muted: oklch(0.97 0 0);
+  --primary: oklch(0.2171 0.071 314.68);
+  --primary-foreground: oklch(1 0 50.5765);
+  --secondary: oklch(0.6929 0.181681 50.5765);
+  --secondary-foreground: oklch(0.77801 0.12844 62.094);
+  --muted: oklch(0.92 0.01 50.5);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(84.516% 0.07074 67.296);
+  /* --accent: oklch(84.516% 0.07074 67.296);
   --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: oklch(0.577 0.245 27.325); */
   --border: oklch(72.045% 0.15733 65.635);
-  --input: oklch(72.045% 0.15733 65.635);
-  --ring: oklch(0.708 0 0);
+  /* --input: oklch(72.045% 0.15733 65.635);
+  --input-background: oklch(0.96 0.01 50);
+  --ring: oklch(0.708 0 0); */
   --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-2: oklch(58.417% 0.19541 142.573);
+  --chart-3: oklch(0.398 0.07 227.392); 
   --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(77.4% 0.14447 72.673);
+  /* --chart-5: oklch(77.4% 0.14447 72.673);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -75,8 +76,8 @@
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  --sidebar-ring: oklch(0.708 0 0); */
+} 
 
 .dark {
   --background: oklch(0.145 0 0);
