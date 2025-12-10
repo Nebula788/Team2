@@ -26,11 +26,4 @@ export const CORRECT_RESULTS: Record<string, string> = {
   a25: "B",
 };
 
-export const questions = [
-  {
-    title: "dsadas",
-    answers: ["dsadasda", "dasdasdsa", "dasdas", "dasda"],
-    answer: "",
-    
-  },
-];
+

@@ -13,7 +13,7 @@ function RadioGroup({
   return (
     <RadioGroupPrimitive.Root
       data-slot="radio-group"
-      className={cn("grid gap-3", className)}
+      className={cn("grid gap-3 p-5", className)}
       {...props}
     />
   );
@@ -44,7 +44,7 @@ function RadioGroupItem({
 
 const RadioGroupContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <label className="flex gap-2 border border-primary p-2 rounded items-center">
+    <label className="flex gap-2 border border-primary p-2 rounded items-center text-primary font-medium hover:bg-secondary">
       {children}
     </label>
   );
