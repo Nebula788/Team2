@@ -3,6 +3,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { IconBrandApple, IconBrandFacebook, IconBrandGoogle } from "@tabler/icons-react";
 
 
 const Page = () => {
@@ -47,7 +48,7 @@ const Page = () => {
               </Link>
             </div>
 
-            <Button className="mt-2 bg-brandAccent hover:bg-brandAccentHover text-white">
+            <Button className="mt-2 bg-red-500 hover:bg-brandAccentHover text-white">
               Sign In
             </Button>
 
@@ -59,13 +60,13 @@ const Page = () => {
 
           <div className="flex gap-4 justify-center">
             <Button variant="outline" className="p-3 rounded-full border-brandBorder">
-              <img src={"/Gmail_icon_(2020).svg.png"} className="size-6" />
+              <IconBrandGoogle/>
             </Button>
             <Button variant="outline" className="p-3 rounded-full border-brandBorder">
-              <img src={"/apple-icon-4.png"} className="size-6" />
+              <IconBrandApple/>
             </Button>
             <Button variant="outline" className="p-3 rounded-full border-brandBorder">
-              <img src={"/facebook-logo.png"} className="size-6" />
+              <IconBrandFacebook/>
             </Button>
           </div>
           

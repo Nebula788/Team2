@@ -1,7 +1,100 @@
-import React from "react";
+"use client";
 
-const page = () => {
-  return <div></div>;
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import React, { useEffect, useState } from "react";
+import { Star } from "lucide-react";
+import { BOOKS } from "@/lib/booksData";
+import { useAtom } from "jotai";
+import { cartAtom } from "@/atoms/cartAtom";
+import { Rating } from "@/components/ui/rating";
+import { Badge } from "@/components/ui/badge-2";
+import { Card } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Link from "next/link";
+
+export interface Book {
+  goodread_id: string;
+  author: string;
+  title: string;
+  rating: number;
+  quantity: number;
+}
+
+const ProductsList: React.FC = () => {
+  const [cart, setCart] = useAtom<Book[]>(cartAtom as any);
+
+  return (
+    <div className="max-w-[1200px] mx-auto">
+      <h1 className="text-2xl font-bold p-5">Book Library</h1>
+      <div className=" bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
+        {BOOKS?.map((book, index) => (
+          <Card className="h-fit w-fit py-0">
+            <div
+            className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
+            key={book.goodread_id}
+          >
+            <img className="h-[350px] w-[300px]" src={book.img} />
+            <Tooltip>
+              <TooltipTrigger>
+                <p className="font-semibold text-2xl line-clamp-2 h-[2lh]">
+                  {book.title}
+                </p>
+              </TooltipTrigger>
+              <TooltipContent>{book.title}</TooltipContent>
+            </Tooltip>
+            <p className="text-muted-foreground line-clamp-1"> {book.author}</p>
+            <div className="flex gap-2">
+              <Rating rating={book.rating}></Rating>
+              <p>{book.rating}</p>
+            </div>
+            <div className="flex justify-between">
+              <p className="font-bold text-l">$ {book.price}</p>
+              {book.bestseller && (
+                <Badge className="absolute top-4 right-4 bg-red-600 text-white font-mono">
+                  Best seller
+                </Badge>
+              )}
+            </div>
+            <Button
+              onClick={() => {
+                const temp = [...cart];
+
+                if (temp.length > 0) {
+                  const findIndex = temp.findIndex(
+                    (item) => item.goodread_id == book.goodread_id
+                  );
+
+                  if (findIndex !== -1) {
+                    temp[findIndex].quantity = temp[findIndex].quantity + 1;
+                    setCart(temp);
+                  } else {
+                    setCart([...cart, { ...book, quantity: 1 }]);
+                  }
+                } else {
+                  setCart([...cart, { ...book, quantity: 1 }]);
+                }
+              }}
+              className="cursor-pointer"
+            >
+              Add to Cart
+            </Button>
+          </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default page;
+export default ProductsList;

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Facebook, Icon, Mail } from 'lucide-react'
 import { Link } from 'lucide-react'
+import { IconBrandApple, IconBrandFacebook, IconBrandGoogle } from '@tabler/icons-react'
 const page = () => {
   
   return (
@@ -40,7 +41,7 @@ const page = () => {
           </div>
 
          
-          <Button className="mt-2 bg-brandAccent hover:bg-brandAccentHover text-white">
+          <Button className="mt-2 bg-red-500 hover:bg-brandAccentHover text-white">
             Sign Up
           </Button>
 
@@ -53,15 +54,15 @@ const page = () => {
           
           <div className="flex gap-4 justify-center">
             <Button variant="outline" className="p-3 rounded-full border-brandBorder">
-              <img src={"/Gmail_icon_(2020).svg.png"} className="size-6" />
+              <IconBrandGoogle/>
             </Button>
 
             <Button variant="outline" className="p-3 rounded-full border-brandBorder">
-              <img src={"/apple-icon-4.png"} className="size-6" />
+              <IconBrandApple/>
             </Button>
 
             <Button variant="outline" className="p-3 rounded-full border-brandBorder">
-              <img src={"/facebook-logo.png"} className="size-6" />
+              <IconBrandFacebook/>
             </Button>
           </div>
 

@@ -21,6 +21,7 @@ type Book = {
   price: number;
   quantity: number;
   goodread_id: string;
+  img: string;
 };
 
 const Header = () => {
@@ -81,7 +82,7 @@ const Header = () => {
               </Button>
             </SheetTrigger>
             <SheetContent className="w-full sm:max-w-[600px]">
-              <SheetTitle>Your Cart</SheetTitle>
+              <SheetTitle >Your Cart</SheetTitle>
               <SheetDescription>
                 The products currently in your cart.
               </SheetDescription>
@@ -95,12 +96,15 @@ const Header = () => {
                     cart.map((book) => (
                       <Card key={book.title} className="p-3">
                         <div className="flex justify-between items-center">
-                          <div className="flex flex-col">
-                            <p className="font-semibold">{book.title}</p>
+                          <div className="flex">
+                            <img className="h-20 w-15" src={book.img} />
+                            <div className="flex flex-col pt-3 px-3">
+                              <p className="font-semibold">{book.title}</p>
                             <p className="text-sm text-gray-600">
                               Quantity: {book.quantity} | Total:
                               {book.price * book.quantity}$
                             </p>
+                            </div>
                           </div>
                           <Button
                             variant="ghost"

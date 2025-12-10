@@ -11,12 +11,23 @@ import { Star } from "lucide-react";
 import { BOOKS } from "@/lib/booksData";
 import { useAtom } from "jotai";
 import { cartAtom } from "@/atoms/cartAtom";
+import { Rating } from "./ui/rating";
+import { Badge } from "./ui/badge-2";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Link from "next/link";
+import { Card } from "./ui/card";
 
 export interface Book {
   goodread_id: string;
   author: string;
   title: string;
-  rating: string;
+  rating: number;
   quantity: number;
 }
 
@@ -24,53 +35,134 @@ export const ProductsList: React.FC = () => {
   const [cart, setCart] = useAtom<Book[]>(cartAtom as any);
 
   return (
-    <div className="p-20 bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
-      {BOOKS?.map((book, index) => (
-        <div
-          className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
-          key={book.goodread_id}
-        >
-          <img className="h-[350px] w-[300px]" src={book.img} />
-          <Tooltip>
-            <TooltipTrigger>
-              <p className="font-semibold text-2xl line-clamp-2 h-[2lh]">
-                {book.title}
+    <div className="max-w-[1200px] mx-auto">
+      <h1 className="text-2xl font-bold p-5">Best Seller</h1>
+      <div className=" bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
+        {BOOKS?.filter((book) => parseFloat(book.rating) >= 4).map(
+          (book, index) => (
+            <Card className="h-fit w-fit py-0">
+              <div
+              className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
+              key={book.goodread_id}
+            >
+              <img className="h-[350px] w-[300px]" src={book.img} />
+              <Tooltip>
+                <TooltipTrigger>
+                  <p className="font-semibold text-2xl line-clamp-2 h-[2lh]">
+                    {book.title}
+                  </p>
+                </TooltipTrigger>
+                <TooltipContent>{book.title}</TooltipContent>
+              </Tooltip>
+              <p className="text-muted-foreground line-clamp-1">
+                {" "}
+                {book.author}
               </p>
-            </TooltipTrigger>
-            <TooltipContent>{book.title}</TooltipContent>
-          </Tooltip>
-          <p className="text-muted-foreground line-clamp-1"> {book.author}</p>
-          <div className="flex justify-between">
-            <p className="font-bold text-l">{book.price}</p>
-            <p className="bg-chart-4 w-fit text-sm gap-1 flex items-center rounded-xl px-3 absolute top-6 right-6">
-              <Star fill="" className="size-3" /> {book.rating}
-            </p>
-          </div>
-          <Button
-            onClick={() => {
-              const temp = [...cart];
+              <div className="flex gap-2">
+                <Rating rating={book.rating}></Rating>
+                <p>{book.rating}</p>
+              </div>
+              <div className="flex justify-between">
+                <p className="font-bold text-l">$ {book.price}</p>
+                {book.bestseller && (
+                  <Badge className="absolute top-4 right-4 bg-red-600 text-white font-mono">
+                    Best seller
+                  </Badge>
+                )}
+              </div>
+              <Button
+                onClick={() => {
+                  const temp = [...cart];
 
-              if (temp.length > 0) {
-                const findIndex = temp.findIndex(
-                  (item) => item.goodread_id == book.goodread_id
-                );
+                  if (temp.length > 0) {
+                    const findIndex = temp.findIndex(
+                      (item) => item.goodread_id == book.goodread_id
+                    );
 
-                if (findIndex !== -1) {
-                  temp[findIndex].quantity = temp[findIndex].quantity + 1;
-                  setCart(temp);
-                } else {
-                  setCart([...cart, { ...book, quantity: 1 }]);
-                }
-              } else {
-                setCart([...cart, { ...book, quantity: 1 }]);
-              }
-            }}
-            className="cursor-pointer"
-          >
-            Add to Cart
-          </Button>
-        </div>
-      ))}
+                    if (findIndex !== -1) {
+                      temp[findIndex].quantity = temp[findIndex].quantity + 1;
+                      setCart(temp);
+                    } else {
+                      setCart([...cart, { ...book, quantity: 1 }]);
+                    }
+                  } else {
+                    setCart([...cart, { ...book, quantity: 1 }]);
+                  }
+                }}
+                className="cursor-pointer"
+              >
+                Add to Cart
+              </Button>
+            </div>
+            </Card>
+          )
+        )}
+      </div>
+      <div className="flex justify-between p-5"> 
+        <h1 className="text-2xl font-bold">Book Library</h1>
+        <Link href={'/product'}><h1 className="text-2xl font-bold">View all Product</h1></Link>
+        </div> 
+      <div className=" bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
+        {BOOKS?.filter((book) => parseFloat(book.rating) <= 4)
+          .slice(0, 4)
+          .map((book, index) => (
+            <Card className="h-fit w-fit py-0">
+              <div
+              className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
+              key={book.goodread_id}
+            >
+              <img className="h-[350px] w-[300px]" src={book.img} />
+              <Tooltip>
+                <TooltipTrigger>
+                  <p className="font-semibold text-2xl line-clamp-2 h-[2lh]">
+                    {book.title}
+                  </p>
+                </TooltipTrigger>
+                <TooltipContent>{book.title}</TooltipContent>
+              </Tooltip>
+              <p className="text-muted-foreground line-clamp-1">
+                {" "}
+                {book.author}
+              </p>
+              <div className="flex gap-2">
+                <Rating rating={book.rating}></Rating>
+                <p>{book.rating}</p>
+              </div>
+              <div className="flex justify-between">
+                <p className="font-bold text-l">$ {book.price}</p>
+                {book.bestseller && (
+                  <Badge className="absolute top-4 right-4 bg-red-600 text-white font-mono">
+                    Best seller
+                  </Badge>
+                )}
+              </div>
+              <Button
+                onClick={() => {
+                  const temp = [...cart];
+
+                  if (temp.length > 0) {
+                    const findIndex = temp.findIndex(
+                      (item) => item.goodread_id == book.goodread_id
+                    );
+
+                    if (findIndex !== -1) {
+                      temp[findIndex].quantity = temp[findIndex].quantity + 1;
+                      setCart(temp);
+                    } else {
+                      setCart([...cart, { ...book, quantity: 1 }]);
+                    }
+                  } else {
+                    setCart([...cart, { ...book, quantity: 1 }]);
+                  }
+                }}
+                className="cursor-pointer"
+              >
+                Add to Cart
+              </Button>
+            </div>
+            </Card>
+          ))}
+      </div>
     </div>
   );
 };
