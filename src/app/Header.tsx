@@ -32,7 +32,9 @@ const Header = () => {
       if (existingBook) {
         if (existingBook.quantity > 1) {
           return prevCart.map((book) =>
-            book.title === title ? { ...book, quantity: book.quantity - 1 } : book
+            book.title === title
+              ? { ...book, quantity: book.quantity - 1 }
+              : book
           );
         } else {
           return prevCart.filter((book) => book.title !== title);
@@ -48,12 +50,12 @@ const Header = () => {
   );
 
   return (
-    <div className='bg-accent'>
-      <div className='flex items-center justify-between px-10 border-b-1'>
-        <div className='flex items-center gap-2'>
-          <Link href={'/'} className='flex items-center gap-2'>
-            <img src='nmtec-erxes-18-04.svg' className='h-[48px]' alt="Logo" />
-            <p className='text-l font-semibold'>Academy</p>
+    <div className="bg-accent">
+      <div className="flex items-center justify-between px-10 border-b-1">
+        <div className="flex items-center gap-2">
+          <Link href={"/"} className="flex items-center gap-2">
+            <img src="nmtec-erxes-18-04.svg" className="h-[48px]" alt="Logo" />
+            <p className="text-l font-semibold">Academy</p>
           </Link>
         </div>
         <div className="flex gap-2">
@@ -69,7 +71,7 @@ const Header = () => {
                 <ShoppingCart />
                 {cart.length > 0 && (
                   <span className="ml-1 text-sm font-bold">
-                    ({cart.reduce((sum, book) => sum + book.quantity, 0)})
+                    ({cart.reduce((sum, book) => sum + 1, 0)})
                   </span>
                 )}
               </Button>
@@ -82,7 +84,9 @@ const Header = () => {
               <SheetHeader>
                 <div className="mt-4 space-y-2">
                   {cart.length === 0 ? (
-                    <p className="text-center text-gray-500">Your cart is empty.</p>
+                    <p className="text-center text-gray-500">
+                      Your cart is empty.
+                    </p>
                   ) : (
                     cart.map((book) => (
                       <Card key={book.title} className="p-3">
@@ -90,12 +94,13 @@ const Header = () => {
                           <div className="flex flex-col">
                             <p className="font-semibold">{book.title}</p>
                             <p className="text-sm text-gray-600">
-                                Quantity: **{book.quantity}** | Total: $${book.price * book.quantity}$$
+                              Quantity: {book.quantity} | Total:
+                              {book.price * book.quantity}$
                             </p>
                           </div>
-                          <Button 
-                            variant="ghost" 
-                            size="icon" 
+                          <Button
+                            variant="ghost"
+                            size="icon"
                             onClick={() => removeFromCart(book.title)}
                           >
                             <Trash2 className="h-4 w-4 text-red-500" />
@@ -105,12 +110,12 @@ const Header = () => {
                     ))
                   )}
                 </div>
-                
+
                 {cart.length > 0 && (
                   <div className="mt-6 pt-4 border-t">
                     <div className="flex justify-between font-bold text-lg">
-                        <span>Total Amount:</span>
-                        <span>$${totalAmount}$$</span>
+                      <span>Total Amount:</span>
+                      <span>{totalAmount}$</span>
                     </div>
                     <Button className="w-full mt-4">Checkout</Button>
                   </div>

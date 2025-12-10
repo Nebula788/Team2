@@ -5,8 +5,16 @@ import { ProductsList } from "@/components/ProductsList";
 import { getLevel } from "@/lib/getLevel";
 import Link from "next/link";
 import { TextLoop } from "@/components/ui/text-loop";
+import { useEffect, useState } from "react";
 const page = () => {
-  const score = window.localStorage.getItem("score");
+  const [score, setScore] = useState<any>(null);
+  useEffect(() => {
+    if (window !== undefined) {
+      const sss = window.localStorage.getItem("score");
+      setScore(sss);
+    }
+  });
+
   return (
     <div className="flex flex-col gap-5">
       {score ? (
