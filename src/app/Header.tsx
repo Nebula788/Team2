@@ -20,12 +20,13 @@ type Book = {
   title: string;
   price: number;
   quantity: number;
+  goodread_id: string;
 };
 
 const Header = () => {
   const [cart, setCart] = useAtom<Book[]>(cartAtom as any);
 
-  const removeFromCart = (title: string) => {
+  const removeFromCartQuantity = (title: string) => {
     setCart((prevCart) => {
       const existingBook = prevCart.find((book) => book.title === title);
 
@@ -44,6 +45,9 @@ const Header = () => {
     });
   };
 
+  const removeFromCart = (id: string) => {
+    setCart((prev) => prev.filter((item: any) => item.goodread_id !== id));
+  };
   const totalAmount = cart.reduce(
     (total, book) => total + book.price * book.quantity,
     0
@@ -51,10 +55,10 @@ const Header = () => {
 
   return (
     <div className="bg-accent">
-      <div className="flex items-center justify-between px-10 border-b-1">
+      <div className="flex items-center justify-between px-10 border-b">
         <div className="flex items-center gap-2">
           <Link href={"/"} className="flex items-center gap-2">
-            <img src="nmtec-erxes-18-04.svg" className="h-[48px]" alt="Logo" />
+            <img src="nmtec-erxes-18-04.svg" className="h-12" alt="Logo" />
             <p className="text-l font-semibold">Academy</p>
           </Link>
         </div>
@@ -101,7 +105,7 @@ const Header = () => {
                           <Button
                             variant="ghost"
                             size="icon"
-                            onClick={() => removeFromCart(book.title)}
+                            onClick={() => removeFromCart(book.goodread_id)}
                           >
                             <Trash2 className="h-4 w-4 text-red-500" />
                           </Button>

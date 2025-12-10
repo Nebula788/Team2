@@ -76,7 +76,7 @@ export const BOOKS = [
     rating: "4.3",
     reviews: "347",
     totalratings: "36456",
-    "∑": "5.5",
+    price: "5.5",
     genre:
       "Childrens,Poetry,Childrens,Picture Books,Classics,Fiction,Childrens,Nursery Rhymes,Fantasy,Fantasy,Fairy Tales,Kids,Young Adult",
     img: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1439507704l/1001896._SX318_.jpg",
