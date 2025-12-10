@@ -91,45 +91,52 @@ import { Card } from "@/components/ui/card";
 import { cartAtom } from "@/atoms/cartAtom";
 import { useAtom } from "jotai";
 
-const Header = () => {
-  const [cart, setCart] = useAtom(cartAtom);
+type Book = {
+  title: string;
+  price: number;
+  quantity: number;
+};
 
-  const removeFromCart = (id: string) => {
-    setCart(cart.filter((item) => item.id !== id));
+const Header = () => {
+  const [cart, setCart] = useAtom<Book[]>(cartAtom as any);
+
+  const removeFromCart = (title: string) => {
+    setCart((prevCart) => {
+      const existingBook = prevCart.find((book) => book.title === title);
+
+      if (existingBook) {
+        if (existingBook.quantity > 1) {
+          return prevCart.map((book) =>
+            book.title === title
+              ? { ...book, quantity: book.quantity - 1 }
+              : book
+          );
+        } else {
+          return prevCart.filter((book) => book.title !== title);
+        }
+      }
+      return prevCart;
+    });
   };
 
-  const cartTotal = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+  const totalAmount = cart.reduce(
+    (total, book) => total + book.price * book.quantity,
+    0
+  );
 
   return (
-    <header className="bg-primary/95 backdrop-blur-md border-b-2 fixed top-0 left-0 right-0 z-50 shadow-lg">
-      <div className="h-20 px-8 flex items-center justify-between">
-        
-        <Link
-          href="/"
-          className="flex items-center gap-2 hover:scale-105 transition"
-        >
-          <span className="text-4xl font-bold text-secondary drop-shadow-md">
-            Book
-          </span>
-          <p className="text-lg font-semibold text-primary-foreground">Store</p>
-        </Link>
-
-        
-        <div className="relative hidden sm:flex items-center">
-          <Search className="absolute left-3 text-foreground w-4 h-4" />
-          <Input
-            placeholder="Search books..."
-            className="pl-9 w-56 bg-background hover:bg-secondary transition"
-          />
+    <div className="bg-accent">
+      <div className="flex items-center justify-between px-10 border-b-1">
+        <div className="flex items-center gap-2">
+          <Link href={"/"} className="flex items-center gap-2">
+            <img src="nmtec-erxes-18-04.svg" className="h-[48px]" alt="Logo" />
+            <p className="text-l font-semibold">Academy</p>
+          </Link>
         </div>
-
-        
-        <div className="flex items-center gap-3">
-          <Link href="/sign-in">
-            <Button
-              variant="outline"
-              className="bg-primary-foreground hover:bg-secondary"
-            >
+        <div className="flex gap-2">
+          <Input className="w-40" type="text" placeholder=" Search" />
+          <Link href={"/sign-in"}>
+            <Button variant={"outline"}>
               <User />
             </Button>
           </Link>
@@ -142,24 +149,57 @@ const Header = () => {
                 className="bg-primary-foreground hover:bg-secondary relative"
               >
                 <ShoppingCart />
-
-                
                 {cart.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-chart-1 text-primary-foreground text-xs px-1.5 py-0.5 rounded-full">
-                    {cart.length}
+                  <span className="ml-1 text-sm font-bold">
+                    ({cart.reduce((sum, book) => sum + 1, 0)})
                   </span>
                 )}
               </Button>
             </SheetTrigger>
-
-            <SheetContent className="w-full sm:max-w-[520px]">
+            <SheetContent className="w-full sm:max-w-[600px]">
+              <SheetTitle>Your Cart</SheetTitle>
+              <SheetDescription>
+                The products currently in your cart.
+              </SheetDescription>
               <SheetHeader>
-                <SheetTitle className="text-2xl font-bold">
-                  Your Cart
-                </SheetTitle>
-                <SheetDescription>
-                  Review your selected books before checkout.
-                </SheetDescription>
+                <div className="mt-4 space-y-2">
+                  {cart.length === 0 ? (
+                    <p className="text-center text-gray-500">
+                      Your cart is empty.
+                    </p>
+                  ) : (
+                    cart.map((book) => (
+                      <Card key={book.title} className="p-3">
+                        <div className="flex justify-between items-center">
+                          <div className="flex flex-col">
+                            <p className="font-semibold">{book.title}</p>
+                            <p className="text-sm text-gray-600">
+                              Quantity: {book.quantity} | Total:
+                              {book.price * book.quantity}$
+                            </p>
+                          </div>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => removeFromCart(book.title)}
+                          >
+                            <Trash2 className="h-4 w-4 text-red-500" />
+                          </Button>
+                        </div>
+                      </Card>
+                    ))
+                  )}
+                </div>
+
+                {cart.length > 0 && (
+                  <div className="mt-6 pt-4 border-t">
+                    <div className="flex justify-between font-bold text-lg">
+                      <span>Total Amount:</span>
+                      <span>{totalAmount}$</span>
+                    </div>
+                    <Button className="w-full mt-4">Checkout</Button>
+                  </div>
+                )}
               </SheetHeader>
 
               <div className="mt-6 space-y-4 max-h-[70vh] overflow-y-auto pr-2">

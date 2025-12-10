@@ -11,12 +11,16 @@ import {
 import { ProductsList } from "@/components/ProductsList";
 import { getLevel } from "@/lib/getLevel";
 import Link from "next/link";
-
-import { testScoreAtom } from "@/atoms/testScoreAtom";
-import { useAtom } from "jotai";
-
-export const Page = () => {
-  const [score] = useAtom(testScoreAtom);
+import { TextLoop } from "@/components/ui/text-loop";
+import { useEffect, useState } from "react";
+const page = () => {
+  const [score, setScore] = useState<any>(null);
+  useEffect(() => {
+    if (window !== undefined) {
+      const sss = window.localStorage.getItem("score");
+      setScore(sss);
+    }
+  });
 
   return (
     <div className="flex flex-col gap-14 mt-28 px-6">
