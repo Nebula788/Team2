@@ -7,7 +7,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-
 import { BOOKS } from "@/lib/booksData";
 import { useAtom } from "jotai";
 import { cartAtom } from "@/atoms/cartAtom";
@@ -24,11 +23,13 @@ export interface Book {
 }
 
 const ProductsList: React.FC = () => {
-  const [cart, setCart] = useAtom<Book[]>(cartAtom as any);
+  const [cart, setCart] = useAtom<any[]>(cartAtom as any);
 
   return (
     <div className="max-w-[1200px] mx-auto">
-      <span className="flex text-2xl font-bold py-5 text-secondary">Book Library</span>
+      <span className="flex text-2xl font-bold py-5 text-secondary">
+        Book Library
+      </span>
       <div className=" bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
         {BOOKS?.map((book, index) => (
           <Card className="h-fit w-fit py-0 bg-foreground border-primary hover:bg-muted transition">
@@ -50,7 +51,7 @@ const ProductsList: React.FC = () => {
                 {book.author}
               </p>
               <div className="flex gap-2">
-                <Rating rating={book.rating}></Rating>
+                <Rating rating={parseFloat(book.rating)}></Rating>
                 <p>{book.rating}</p>
               </div>
               <div className="flex justify-between">
@@ -61,7 +62,8 @@ const ProductsList: React.FC = () => {
                   </Badge>
                 )}
               </div>
-              <Button variant={"secondary"}
+              <Button
+                variant={"secondary"}
                 onClick={() => {
                   const temp = [...cart];
 

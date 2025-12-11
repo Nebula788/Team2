@@ -26,7 +26,7 @@ export interface Book {
 }
 
 export const ProductsList: React.FC = () => {
-  const [cart, setCart] = useAtom<Book[]>(cartAtom as any);
+  const [cart, setCart] = useAtom<any[]>(cartAtom as any);
 
   return (
     <div className="max-w-[1200px] mx-auto">
@@ -55,7 +55,7 @@ export const ProductsList: React.FC = () => {
                   {book.author}
                 </p>
                 <div className="flex gap-2">
-                  <Rating rating={book.rating}></Rating>
+                  <Rating rating={parseFloat(book.rating)}></Rating>
                   <p>{book.rating}</p>
                 </div>
                 <div className="flex justify-between">
@@ -66,7 +66,8 @@ export const ProductsList: React.FC = () => {
                     </Badge>
                   )}
                 </div>
-                <Button variant={"secondary"}
+                <Button
+                  variant={"secondary"}
                   onClick={() => {
                     const temp = [...cart];
 
@@ -126,7 +127,7 @@ export const ProductsList: React.FC = () => {
                   {book.author}
                 </p>
                 <div className="flex gap-2">
-                  <Rating rating={book.rating}></Rating>
+                  <Rating rating={parseFloat(book.rating)}></Rating>
                   <p>{book.rating}</p>
                 </div>
                 <div className="flex justify-between">
@@ -137,7 +138,8 @@ export const ProductsList: React.FC = () => {
                     </Badge>
                   )}
                 </div>
-                <Button variant={"secondary"}
+                <Button
+                  variant={"secondary"}
                   onClick={() => {
                     const temp = [...cart];
 
