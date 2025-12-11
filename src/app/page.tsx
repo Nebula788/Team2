@@ -71,7 +71,7 @@ const page = () => {
             )}
           </div>
 
-          {/* CTA Button */}
+          
           <Link href="/test">
             <Button
               size="lg"
@@ -88,7 +88,7 @@ const page = () => {
         </CardHeader>
       </Card>
 
-      {/* Products Section */}
+      
       <ProductsList />
     </div>
   );

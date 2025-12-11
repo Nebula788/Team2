@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -13,13 +12,6 @@ import { useAtom } from "jotai";
 import { cartAtom } from "@/atoms/cartAtom";
 import { Rating } from "./ui/rating";
 import { Badge } from "./ui/badge-2";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Link from "next/link";
 import { Card } from "./ui/card";
 
