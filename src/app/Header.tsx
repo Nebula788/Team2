@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ShoppingCart, Trash2, User } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
 import {
   Sheet,
   SheetContent,
@@ -55,7 +55,7 @@ const Header = () => {
   );
 
   return (
-    <div className="bg-accent">
+    <div className="bg-accent ">
       <div className="flex items-center justify-between px-10 border-b">
         <div className="flex items-center gap-2">
           <Link href={"/"} className="flex items-center gap-2">
