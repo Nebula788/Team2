@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
+
   FormField,
   FormItem,
   FormMessage,
@@ -33,9 +33,9 @@ import { useAtom } from "jotai";
 import { Check, X } from "lucide-react";
 import Link from "next/link";
 import { getLevel } from "@/lib/getLevel";
-import { IconArrowBadgeDown, IconQuestionMark } from "@tabler/icons-react";
+import { IconArrowBadgeDown } from "@tabler/icons-react";
 import { IconArrowBadgeUp } from "@tabler/icons-react";
-import { progress } from "motion/react";
+
 
 const formSchema = z.object({
   a1: z.string({ message: "test" }).nullable(),
@@ -89,7 +89,7 @@ export default function MyForm() {
   }
   return (
     <div className="p-5 flex relative gap-10">
-      <div className="bg-background h-[calc(100vh-10rem)] fixed w-[15%] grid grid-cols-2 p-1 rounded-2xl mt-25 border-2 shadow-md shadow-">
+      <div className="bg-background h-[calc(100vh-10rem)] fixed w-[15%] grid grid-cols-2 p-1 rounded-2xl mt-10 border-2 border-primary shadow-md ">
         {Object.entries(fields).map((entry) => {
           return (
             <Link href={`#${entry[0]}`} className="flex gap-x-1" key={entry[0]}>
@@ -104,18 +104,18 @@ export default function MyForm() {
         })}
       </div>
       <div className="fixed bottom-10 right-10 flex flex-col gap-3">
-        <Button size="icon" className="rounded-full shadow-md" asChild>
+        <Button size="icon" className="rounded-full shadow-md text-background" asChild>
           <a href="#a1">
             <IconArrowBadgeUp size={40} />
           </a>
         </Button>
-        <Button size="icon" className="rounded-full shadow-md" asChild>
+        <Button size="icon" className="rounded-full shadow-md text-background" asChild>
           <a href="#a25">
             <IconArrowBadgeDown size={28} />
           </a>
         </Button>
       </div>
-      <Card className="flex flex-col max-w-full w-[55%] mx-auto bg-stone-200  p-5 mt-25 border-2">
+      <Card className="flex flex-col max-w-full w-[55%] mx-auto bg-stone-200  p-5 mt-10 border-2 border-primary">
         
         <p className="font-bold">Part A — Grammar & Vocabulary (1-15)</p>
         <Form {...form}>
@@ -1070,24 +1070,24 @@ export default function MyForm() {
               />
             </QuestionCard>
 
-            <AlertDialog open={open} onOpenChange={setOpen}>
-              <Button type="submit">Submit</Button>
-              <AlertDialogContent className="border-2 shadow-xl">
+            <AlertDialog open={open} onOpenChange={setOpen} >
+              <Button className="text-background hover:bg-secondary" type="submit">Submit</Button>
+              <AlertDialogContent className="border-2 shadow-xl border-primary">
                 <AlertDialogHeader className="">
-                  <AlertDialogTitle className="text-center text-2xl font-bold">
-                    Congratuilations!
+                  <AlertDialogTitle className="text-center text-2xl font-bold text-primary">
+                    Congratulations!
                   </AlertDialogTitle>
-                  <p className="text-center text-lg">
+                  <p className="text-center text-lg text-secondary">
                     Your Score:{" "}
                     <span className="font-semibold">{score}/25</span>
                   </p>
-                  <AlertDialogDescription className="text-center text-base">
+                  <AlertDialogDescription className="text-center text-base text-muted-foreground">
                     {getLevel(score || 0)}
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter className="flex justify-center">
                   <Link href="/" className="w-full">
-                    <AlertDialogAction className="w-full">OK</AlertDialogAction>
+                    <AlertDialogAction className="w-full text-background hover:bg-secondary">OK</AlertDialogAction>
                   </Link>
                 </AlertDialogFooter>
               </AlertDialogContent>
@@ -1112,7 +1112,7 @@ function calculateScore(values: Record<string, string | null>) {
 }
 function QuestionCard({ id, question, children }: any) {
   return (
-    <Card id={id} className="p-5 shadow-sm border">
+    <Card id={id} className="p-5 shadow-sm border-primary">
       <p className="font-semibold mb-3">{question}</p>
       {children}
     </Card>

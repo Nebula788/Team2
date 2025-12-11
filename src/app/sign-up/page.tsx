@@ -9,7 +9,7 @@ const page = () => {
   
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-brandBg px-4">
-      <Card className="p-8 w-full max-w-md shadow-xl border border-brandBorder/40 bg-white/90 backdrop-blur">
+      <Card className="p-8 w-full max-w-md shadow-xl border border-primary bg-white/90 backdrop-blur">
         <h2 className="text-2xl font-semibold text-brandDark text-center mb-6">
           Create an Account
         </h2>
@@ -41,7 +41,7 @@ const page = () => {
           </div>
 
          
-          <Button className="mt-2 bg-red-500 hover:bg-brandAccentHover text-white">
+          <Button className="mt-2 bg-primary hover:bg-brandAccentHover text-white">
             Sign Up
           </Button>
 
@@ -68,9 +68,7 @@ const page = () => {
 
           <p className="text-center text-sm mt-4">
             Already have an account?{" "}
-            <Link href="/sign-in" className="text-brandAccent underline">
-              Sign In
-            </Link>
+            
           </p>
         </div>
       </Card>

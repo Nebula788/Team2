@@ -11,7 +11,7 @@ export const Footer = () => {
   const path = usePathname();
   if (path === "/test") return null;
   return (
-    <footer className="bg-orange-300 text-white border-t border-white/30 mt-20">
+    <footer className="bg-primary text-white border-t border-white/30 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
         <div className="space-y-3">
           <h3 className="text-xl font-semibold">Where we are </h3>
@@ -58,7 +58,7 @@ export const Footer = () => {
           </p>
 
           <p className="text-lg font-semibold text-white mt-3">
-            Call us: <span className="text-white">0000000</span>
+            <IconPhone/> <span className="text-white">0000000</span>
           </p>
         </div>
       </div>

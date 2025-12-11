@@ -6,22 +6,14 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import React, { useEffect, useState } from "react";
-import { Star } from "lucide-react";
+
+
 import { BOOKS } from "@/lib/booksData";
 import { useAtom } from "jotai";
 import { cartAtom } from "@/atoms/cartAtom";
 import { Rating } from "@/components/ui/rating";
 import { Badge } from "@/components/ui/badge-2";
 import { Card } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Link from "next/link";
 
 export interface Book {
   goodread_id: string;
@@ -36,10 +28,10 @@ const ProductsList: React.FC = () => {
 
   return (
     <div className="max-w-[1200px] mx-auto">
-      <h1 className="text-2xl font-bold p-5">Book Library</h1>
+      <span className="flex text-2xl font-bold py-5 text-secondary">Book Library</span>
       <div className=" bg-accent grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 ">
         {BOOKS?.map((book, index) => (
-          <Card className="h-fit w-fit py-0">
+          <Card className="h-fit w-fit py-0 bg-foreground border-primary hover:bg-muted transition">
             <div
               className="flex flex-col w-[300px] justify-between p-3  h-[580px] mb-5 relative"
               key={book.goodread_id}
@@ -69,7 +61,7 @@ const ProductsList: React.FC = () => {
                   </Badge>
                 )}
               </div>
-              <Button
+              <Button variant={"secondary"}
                 onClick={() => {
                   const temp = [...cart];
 

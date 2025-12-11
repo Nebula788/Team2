@@ -22,7 +22,7 @@ const page = () => {
   });
 
   return (
-    <div className="flex flex-col gap-14 mt-28 px-6">
+    <div className="flex flex-col gap-14 mt-15 px-6">
       <Card
         className="
           relative mx-auto w-[90%] max-w-4xl p-0 overflow-hidden 
@@ -45,13 +45,13 @@ const page = () => {
           <div className="space-y-2">
             {score ? (
               <>
-                <CardTitle className="text-4xl font-bold text-foreground tracking-tight">
+                <CardTitle className="text-4xl font-bold text-neutral-400 tracking-tight">
                   Your Score:{" "}
-                  <span className="text-secondary-foreground">{score}</span>
+                  <span className="text-secondary">{score}</span>
                   /25
                 </CardTitle>
 
-                <CardDescription className="text-xl text-foreground/80">
+                <CardDescription className="text-xl text-neutral-400">
                   English Level:{" "}
                   <span className="font-semibold text-secondary">
                     {getLevel(score)}
@@ -60,11 +60,11 @@ const page = () => {
               </>
             ) : (
               <>
-                <CardTitle className="text-3xl font-bold text-foreground tracking-tight">
+                <CardTitle className="text-3xl font-bold text-secondary tracking-tight">
                   English Proficiency Test
                 </CardTitle>
 
-                <CardDescription className="text-lg text-foreground/80">
+                <CardDescription className="text-lg text-muted-foreground">
                   Measure your reading and comprehension level in 5 minutes.
                 </CardDescription>
               </>
@@ -76,10 +76,10 @@ const page = () => {
             <Button
               size="lg"
               className="
-                bg-primary text-primary-foreground
-                hover:bg-secondary hover:text-secondary-foreground
+                bg-primary text-background
+                hover:bg-secondary hover:text-primary
                 px-8 py-6 text-lg font-semibold 
-                rounded-lg shadow-md transition
+                rounded-lg shadow-2xl transition
               "
             >
               {score ? "Retake Test" : "Start Test"}
